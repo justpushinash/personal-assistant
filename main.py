@@ -1,8 +1,18 @@
 import reminders
 import tasks
 import quotes
+from weather import Weather
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# API-ключ
+openai_api_key = os.getenv('WEATHER_API_KEY')
 
 def main():
+    weather = Weather(openai_api_key)
+    
     reminders.load_reminders()
     tasks.load_tasks()
     print("Добро пожаловать в Личного помощника!")
@@ -22,8 +32,8 @@ def main():
         elif choice == '3':
             quotes.generate_quote()
         elif choice == '4':
-            print("Получение данных о погоде")
-            # Здесь будет вызов функции для получения данных о погоде
+            city = input("Введите название города: ")
+            weather.get_weather(city)
         elif choice == '5':
             print("До свидания!")
             break
