@@ -1,5 +1,6 @@
 import reminders
 import tasks
+import quotes
 
 def main():
     print("Добро пожаловать в Личного помощника!")
@@ -17,8 +18,7 @@ def main():
         elif choice == '2':
             manage_tasks()
         elif choice == '3':
-            print("Генерация случайных цитат")
-            # Здесь будет вызов функции для генерации цитат
+            quotes.generate_quote()
         elif choice == '4':
             print("Получение данных о погоде")
             # Здесь будет вызов функции для получения данных о погоде
@@ -70,4 +70,5 @@ def manage_tasks():
 
 if __name__ == "__main__":
     main()
+
 
