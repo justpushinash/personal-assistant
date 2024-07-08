@@ -1,3 +1,5 @@
+import reminders
+
 def main():
     print("Добро пожаловать в Личного помощника!")
     while True:
@@ -8,21 +10,43 @@ def main():
         print("4. Погода")
         print("5. Выход")
         choice = input("Ваш выбор: ")
-        
+
         if choice == '1':
-            print("Работа с напоминаниями")
+            manage_reminders()
         elif choice == '2':
             print("Работа с задачами")
+            # Здесь будет вызов функции для работы с задачами
         elif choice == '3':
             print("Генерация случайных цитат")
+            # Здесь будет вызов функции для генерации цитат
         elif choice == '4':
             print("Получение данных о погоде")
+            # Здесь будет вызов функции для получения данных о погоде
         elif choice == '5':
             print("До свидания!")
             break
         else:
             print("Неверный выбор. Пожалуйста, попробуйте снова.")
-            
+
+def manage_reminders():
+    while True:
+        print("\nМеню напоминаний:")
+        print("1. Добавить напоминание")
+        print("2. Просмотреть напоминания")
+        print("3. Удалить напоминание")
+        print("4. Назад в главное меню")
+        choice = input("Ваш выбор: ")
+
+        if choice == '1':
+            reminders.add_reminder()
+        elif choice == '2':
+            reminders.view_reminders()
+        elif choice == '3':
+            reminders.delete_reminder()
+        elif choice == '4':
+            break
+        else:
+            print("Неверный выбор. Пожалуйста, попробуйте снова.")
 
 if __name__ == "__main__":
     main()
