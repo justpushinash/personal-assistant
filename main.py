@@ -3,6 +3,8 @@ import tasks
 import quotes
 
 def main():
+    reminders.load_reminders()
+    tasks.load_tasks()
     print("Добро пожаловать в Личного помощника!")
     while True:
         print("\nВыберите действие:")
@@ -70,5 +72,3 @@ def manage_tasks():
 
 if __name__ == "__main__":
     main()
-
-
