@@ -1,4 +1,5 @@
 import reminders
+import tasks
 
 def main():
     print("Добро пожаловать в Личного помощника!")
@@ -14,8 +15,7 @@ def main():
         if choice == '1':
             manage_reminders()
         elif choice == '2':
-            print("Работа с задачами")
-            # Здесь будет вызов функции для работы с задачами
+            manage_tasks()
         elif choice == '3':
             print("Генерация случайных цитат")
             # Здесь будет вызов функции для генерации цитат
@@ -43,6 +43,26 @@ def manage_reminders():
             reminders.view_reminders()
         elif choice == '3':
             reminders.delete_reminder()
+        elif choice == '4':
+            break
+        else:
+            print("Неверный выбор. Пожалуйста, попробуйте снова.")
+
+def manage_tasks():
+    while True:
+        print("\nМеню задач:")
+        print("1. Добавить задачу")
+        print("2. Просмотреть задачи")
+        print("3. Удалить задачу")
+        print("4. Назад в главное меню")
+        choice = input("Ваш выбор: ")
+
+        if choice == '1':
+            tasks.add_task()
+        elif choice == '2':
+            tasks.view_tasks()
+        elif choice == '3':
+            tasks.delete_task()
         elif choice == '4':
             break
         else:
